@@ -127,6 +127,7 @@ resource "aws_route_table" "priv-rt" {
     cidr_block     = var.all_ips_allowed
     nat_gateway_id = aws_nat_gateway.ngw.*.id[count.index]
   }
+  
   tags = {
     Name       = "priv_rt"
     managed_by = var.managed_by
