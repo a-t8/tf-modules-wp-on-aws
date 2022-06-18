@@ -34,10 +34,10 @@ variable "private_sn_cidrs" {
   type = list(any)
 }
 
-var "all_ips_allowed" {
+variable "all_ips_allowed" {
   type = string
 }
 
-var "is_vpc" {
+variable "is_vpc" {
   type = string
 }
