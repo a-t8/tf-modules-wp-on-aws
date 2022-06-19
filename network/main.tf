@@ -109,7 +109,7 @@ resource "aws_eip" "eip_for_natgw" {
 resource "aws_nat_gateway" "ngw" {
   count         = var.private_sn_count
   allocation_id = aws_eip.eip_for_natgw.*.id[count.index]
-  subnet_id     = aws_subnet.private_sn.*.id[count.index]
+  subnet_id     = aws_subnet.public_sn.*.id[count.index]
 
   tags = {
     Name       = "ngw"
