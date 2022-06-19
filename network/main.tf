@@ -50,7 +50,7 @@ resource "aws_subnet" "private_sn" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = var.private_sn_cidrs[count.index]
   map_public_ip_on_launch = false
-  availablity_zone        = random_shuffle.az_list.result[count.index]
+  availability_zone        = random_shuffle.az_list.result[count.index]
 
   tags = {
     Name       = "private_subnet_${count.index + 1}"
